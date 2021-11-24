@@ -1,29 +1,5 @@
-# abdl-bedwetting-chart
+# ABDL Bedwetting Tracker
 
-## Project setup
-```
-npm install
-```
+A simple webpage for keeping track of your unpottytraining :)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Mind that this is *heavily* a work in progress, and only barely usable as it is.
