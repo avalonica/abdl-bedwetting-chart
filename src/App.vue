@@ -1,27 +1,21 @@
 <template>
 	<div id="app">
-		<img
-			alt="Vue logo"
-			src="@/assets/logo.png"
-		/>
-		<Calendar/>
-		<EventEditor/>
+		<BedwettingTracker/>
 	</div>
 </template>
 
 <script>
-	// import HelloWorld from "./components/HelloWorld.vue";
-	import Calendar from "@/components/Calendar.vue";
-	import EventEditor from "@/components/EventEditor.vue";
+	import Vue from "vue";
+
+	import BedwettingTracker from "@/components/BedwettingTracker.vue";
 	
 
-	export default {
+	export default Vue.extend({
 		name: "App",
 		components: {
-			Calendar,
-			EventEditor,
+			BedwettingTracker,
 		},
-	};
+	});
 </script>
 
 <style lang="scss">

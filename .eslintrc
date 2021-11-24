@@ -8,7 +8,7 @@
 		"@vue/standard"
 	],
 	"parserOptions": {
-		"parser": "babel-eslint"
+		"parser": "@babel/eslint-parser"
 	},
 	"rules": {
 		"camelcase": "warn",
@@ -32,9 +32,7 @@
 		}],
 		"no-restricted-globals": "off",
 		"no-return-await": "off",
-		"no-tabs": ["warn", {
-			"allowIndentationTabs": true
-		}],
+		"no-tabs": "off",
 		"no-trailing-spaces": ["warn", {
 			"skipBlankLines": true,
 			"ignoreComments": true
