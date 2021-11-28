@@ -9,6 +9,12 @@ module.exports = {
 			},
 		},
 	},
+	chainWebpack: (config) => {
+		config.plugin("html").tap((args) => {
+			args[0].title = "Bedwetting Tracker";
+			return args;
+		});
+	},
 	publicPath: (
 		process.env.NODE_ENV === "production" ? (
 			"/abdl-bedwetting-chart/"
