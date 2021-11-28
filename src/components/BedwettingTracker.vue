@@ -113,8 +113,11 @@
 </script>
 
 <style scoped lang="scss">
-	// .bedwetting-tracker {
-	// }
+	.bedwetting-tracker {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+	}
 
 	.interaction {
 		display: flex;
