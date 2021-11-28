@@ -4,24 +4,11 @@
 		@submit.prevent="onSave"
 	>
 		<h2 class="header">
-			Edit wetting event
+			Day Editor
+			<span v-if="dateString">
+				({{ dateString }})
+			</span>
 		</h2>
-
-		<label class="date">
-			Date
-			<input
-				v-model="dateString"
-				type="date"
-				readonly
-			/>
-		</label>
-
-		<label class="note">
-			Note
-			<textarea
-				v-model="note"
-			/>
-		</label>
 
 		<fieldset class="type">
 			<legend>Type</legend>
@@ -52,6 +39,13 @@
 			</label>
 		</fieldset>
 
+		<label class="note">
+			Note
+			<textarea
+				v-model="note"
+			/>
+		</label>
+
 		<button
 			type="button"
 			class="delete-button"
@@ -63,6 +57,7 @@
 		<button
 			type="submit"
 			class="save-button"
+			:disabled="!dirty"
 		>
 			Save
 		</button>
@@ -85,44 +80,41 @@
 			},
 		},
 		data: () => ({
-			date: null,
+			dirty: false,
 			note: "",
 			type: WettingType.WOKE_UP_WET,
 		}),
 		computed: {
 			// Make WettingType available to template
 			WettingType() { return WettingType; },
+
 			dateString() {
-				return this.date?.toISOString().split("T")[0];
+				return this.wettingEvent?.date.toISOString().split("T")[0];
 			},
-			// adjustedDate() {
-			// 	const nonAdjustedDate = new Date(this.data);
-			// 	const date = new Date(this.wettingEvent?.date);
-			// 	// date.setDate(nonAdjustedDate.getDate);
-			// 	// date.setMonth(nonAdjustedDate.getMonth());
-			// 	date.setFullYear(
-			// 		nonAdjustedDate.getFullYear(),
-			// 		nonAdjustedDate.getMonth(),
-			// 		nonAdjustedDate.getDate()
-			// 	);
-			// 	return date;
-			// }
 		},
 		watch: {
 			wettingEvent(/** @type {WettingEvent} */ newValue) {
-				this.date = newValue.date;
 				this.note = newValue.note;
 				this.type = newValue.type;
+				this.dirty = false;
+			},
+			note() {
+				this.dirty = true;
+			},
+			type() {
+				this.dirty = true;
 			},
 		},
 		methods: {
 			onSave() {
 				const newEvent = new WettingEvent({
-					date: this.date,
+					date: this.wettingEvent.date,
 					note: this.note,
 					type: this.type,
 				});
 				this.$emit("change", newEvent);
+
+				this.dirty = false;
 			},
 		},
 	});
@@ -153,8 +145,8 @@
 	}
 
 	.note textarea {
-		height: 4em;
-		width: 30ch;
+		height: 6em;
+		width: 50ch;
 	}
 
 	.type {
