@@ -10,15 +10,17 @@
 			</button>
 		</h1>
 
-		<Calendar
-			:wetting-events="flattenedWettingEvents"
-			@day-selected="onDaySelected"
-		/>
-		<EventEditor
-			:wetting-event="selectedEvent"
-			@change="addWettingEvent($event)"
-			@delete="deleteSelectedEvent"
-		/>
+		<div class="interaction">
+			<Calendar
+				:wetting-events="flattenedWettingEvents"
+				@day-selected="onDaySelected"
+			/>
+			<EventEditor
+				:wetting-event="selectedEvent"
+				@change="addWettingEvent($event)"
+				@delete="deleteSelectedEvent"
+			/>
+		</div>
 	</div>
 </template>
 
@@ -74,29 +76,6 @@
 				);
 				this.flattenedWettingEvents = savedEvents;
 			}
-
-
-			// this.addWettingEvent(
-			// 	new WettingEvent({
-			// 		date: new Date(),
-			// 		type: WettingType.WOKE_UP_WET,
-			// 		note: "was wet",
-			// 	}),
-			// );
-			// this.addWettingEvent(
-			// 	new WettingEvent({
-			// 		date: new Date("2021-11-18"),
-			// 		type: WettingType.DRY,
-			// 		note: "was not wet",
-			// 	}),
-			// );
-			// this.addWettingEvent(
-			// 	new WettingEvent({
-			// 		date: new Date("2021-11-5"),
-			// 		type: WettingType.WOKE_UP_AND_WET,
-			// 		note: "was maybe wet",
-			// 	}),
-			// );
 		},
 		methods: {
 			addWettingEvent(
@@ -134,9 +113,15 @@
 </script>
 
 <style scoped lang="scss">
-	.bedwetting-tracker {
-		> :nth-child(2) {
-			margin-bottom: 1rem;
-		}
+	// .bedwetting-tracker {
+	// }
+
+	.interaction {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1rem;
+
+		justify-content: center;
+		align-items: flex-start;
 	}
 </style>
