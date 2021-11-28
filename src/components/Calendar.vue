@@ -1,5 +1,5 @@
 <template>
-	<div class="foo">
+	<div class="calendar-wrapper">
 		<VCalendar
 			is-dark
 			:first-day-of-week="2"
@@ -66,8 +66,9 @@
 </script>
 
 <style scoped lang="scss">
-	.foo {
+	.calendar-wrapper {
 		font-size: 3rem;
+		
 		> * {
 			// transform: scale(1.3);
 			zoom: 1.3;
