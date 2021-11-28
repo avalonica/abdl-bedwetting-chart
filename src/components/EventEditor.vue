@@ -146,7 +146,8 @@
 
 	.note textarea {
 		height: 6em;
-		width: 50ch;
+		width: 45ch;
+		max-width: 85vw;
 	}
 
 	.type {

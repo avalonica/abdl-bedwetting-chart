@@ -28,15 +28,12 @@
 		font-family: Avenir, Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		margin-top: 60px;
-
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: center;
+		padding: 1rem;
 	}
 
 	body {
 		background-color: var(--dark);
 		color: var(--light);
+		margin: 0;
 	}
 </style>

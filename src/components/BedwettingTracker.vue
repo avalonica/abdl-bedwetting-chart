@@ -1,6 +1,6 @@
 <template>
 	<div class="bedwetting-tracker">
-		<h1>
+		<h1 class="header">
 			ABDL Bedwetting Tracker (WIP)
 			<button
 				type="button"
@@ -116,7 +116,12 @@
 	.bedwetting-tracker {
 		display: flex;
 		flex-flow: column nowrap;
+		gap: 1rem;
 		align-items: center;
+	}
+
+	.header {
+		margin: 0;
 	}
 
 	.interaction {
