@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/abdl-bedwetting-chart/precache-manifest.d5064847815bd2849538da97f4b316bd.js"
+  "/abdl-bedwetting-chart/precache-manifest.e12cc1d7cd10229272f2197095ad0f2f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "abdl-bedwetting-chart"});
