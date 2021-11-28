@@ -16,4 +16,12 @@ module.exports = {
 			"/"
 		)
 	),
+	pwa: {
+		name: "ABDL Bedwetting Chart",
+		themeColor: "#071022",
+		msTileColor: "#071022",
+		manifestOptions: {
+			short_name: "BW Chart",
+		},
+	},
 };
